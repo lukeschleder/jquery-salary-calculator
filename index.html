@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jQuery.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Salary Calculator</h1>
+    <h3>Add Employee</h3>
+    <input placeholder="First Name" id="firstNameInput" />
+    <input placeholder="Last Name" id="lastNameInput" />
+    <input placeholder="ID Number" id="idNumberInput" />
+    <input placeholder="Job Title" id="jobTitleInput" />
+    <input placeholder="Annual Salary" id="annualSalaryInput" />
+    <button id="employeeInputButton">Submit</button>
+
+    <h2>Employees</h2>
+
+    <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID Number</th>
+                    <th>Job Title</th>
+                    <th>Annual Salary</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jake</td>
+                    <td>Johnson</td>
+                    <td>1234</td>
+                    <td>President</td>
+                    <td>210000</td>
+                    <td>
+                        <button class="deleteButton">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Matt</td>
+                    <td>Przylski</td>
+                    <td>1245</td>
+                    <td>VP</td>
+                    <td>150000</td>
+                    <td>
+                        <button class="deleteButton">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Brenda</td>
+                    <td>Shultz</td>
+                    <td>9898</td>
+                    <td>Director</td>
+                    <td>100000</td>
+                    <td>
+                        <button class="deleteButton">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+    <h3 id="monthlySalary" >Total Monthly Salary: 0</h3>
+    
+    
+</body>
+</html>
