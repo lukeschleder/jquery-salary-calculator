@@ -14,22 +14,22 @@ let employees= [
         firstName: "Jake",
         lastName: "Johnson",
         idNumber: "1234",
-        jobTitle: "President",
-        annualSalary: "210000"
+        jobTitle: "Team Lead",
+        annualSalary: "75000"
     },
     {
-        firstName: "Matt",
-        lastName: "Przylski",
+        firstName: "Whitney",
+        lastName: "Hope",
         idNumber: "1245",
-        jobTitle: "VP",
-        annualSalary: "150000"
+        jobTitle: "Junior Developer",
+        annualSalary: "65000"
     },
     {
         firstName: "Brenda",
         lastName: "Shultz",
         idNumber: "9898",
-        jobTitle: "Director",
-        annualSalary: "100000"
+        jobTitle: "Support",
+        annualSalary: "40000"
     },
 
 ];
@@ -51,7 +51,7 @@ function handleSubmitClick(){
         annualSalary:annualSalary
         }
         employees.push(newEmployeesObjects)
-// creates input fields
+// clears input fields
     $('#firstNameInput').val('');
     $('#lastNameInput').val('');
     $('#idNumberInput').val('');
@@ -65,7 +65,7 @@ function handleSubmitClick(){
         <td>${lastName}</td>
         <td>${idNumber}</td>
         <td>${jobTitle}</td>
-        <td>${annualSalary}</td>
+        <td>$${annualSalary}</td>
         <td>
             <button class="deleteButton">Delete</button>
         </td>
@@ -79,6 +79,7 @@ function salaryCalculator(){
     let sum=0;
    
     console.log('In salaryCalculator');
+
     for (newEmployee of employees){
         
     sum += Number(newEmployee.annualSalary)/12;
