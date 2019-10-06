@@ -60,7 +60,7 @@ function salaryCalculator() {
 
     for (newEmployee of employees) {
 
-        sum += Number(newEmployee.annualSalary) / 12;
+        sum += Math.round(Number(newEmployee.annualSalary) / 12);
         console.log(sum);
         $('#monthlySalary').text(`Total Monthly Salary: $${sum}`);
     }

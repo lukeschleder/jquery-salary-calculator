@@ -26,6 +26,10 @@ table, th, td {
     
   }
 
+  thead {
+      background-color: lightgrey;
+  }
+
   table {
     width:100%;
   }
