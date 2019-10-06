@@ -19,7 +19,7 @@ function handleSubmitClick() {
     const idNumber = $('#idNumberInput').val();
     const jobTitle = $('#jobTitleInput').val();
     const annualSalary = $('#annualSalaryInput').val();
-
+    // declares new object
     let newEmployeesObjects = {
         firstName: firstName,
         lastName: lastName,
@@ -27,6 +27,7 @@ function handleSubmitClick() {
         jobTitle: jobTitle,
         annualSalary: annualSalary
     }
+    // pushes new object into employees array
     employees.push(newEmployeesObjects)
     // clears input fields
     $('#firstNameInput').val('');
@@ -75,4 +76,5 @@ function salaryCalculator() {
 function handleDeleteClick() {
     console.log('delete button has been clicked');
     $(this).parent().parent().remove();
+    
 }
