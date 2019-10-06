@@ -2,40 +2,17 @@ console.log('js');
 
 $(document).ready(onReady);
 
-function onReady(){
+function onReady() {
     console.log('javascript is working');
-$('#employeeInputButton').on('click', handleSubmitClick);
-$('#employeeInputButton').on('click', salaryCalculator); 
-$('tbody').on('click', '.deleteButton', handleDeleteClick);   
+    $('#employeeInputButton').on('click', handleSubmitClick);
+    $('#employeeInputButton').on('click', salaryCalculator);
+    $('tbody').on('click', '.deleteButton', handleDeleteClick);
 }
 
-let employees= [
-    {
-        firstName: "Jake",
-        lastName: "Johnson",
-        idNumber: "1234",
-        jobTitle: "Team Lead",
-        annualSalary: "75000"
-    },
-    {
-        firstName: "Whitney",
-        lastName: "Hope",
-        idNumber: "1245",
-        jobTitle: "Junior Developer",
-        annualSalary: "65000"
-    },
-    {
-        firstName: "Brenda",
-        lastName: "Shultz",
-        idNumber: "9898",
-        jobTitle: "Support",
-        annualSalary: "40000"
-    },
-
-];
+let employees = [];
 
 
-function handleSubmitClick(){
+function handleSubmitClick() {
     console.log('in handleSubmitClick');
     const firstName = $('#firstNameInput').val();
     const lastName = $('#lastNameInput').val();
@@ -44,20 +21,20 @@ function handleSubmitClick(){
     const annualSalary = $('#annualSalaryInput').val();
 
     let newEmployeesObjects = {
-        firstName:firstName,
-        lastName:lastName,
-        idNumber:idNumber,
-        jobTitle:jobTitle,
-        annualSalary:annualSalary
-        }
-        employees.push(newEmployeesObjects)
-// clears input fields
+        firstName: firstName,
+        lastName: lastName,
+        idNumber: idNumber,
+        jobTitle: jobTitle,
+        annualSalary: annualSalary
+    }
+    employees.push(newEmployeesObjects)
+    // clears input fields
     $('#firstNameInput').val('');
     $('#lastNameInput').val('');
     $('#idNumberInput').val('');
     $('#jobTitleInput').val('');
     $('#annualSalaryInput').val('');
-    
+
     // append into grid
     $('tbody').append(`
     <tr>
@@ -70,27 +47,30 @@ function handleSubmitClick(){
             <button class="deleteButton">Delete</button>
         </td>
     </tr>`);
-    
-    
+
+
 }
+
 //calculate salary from each new employee and add to total monthly
 
-function salaryCalculator(){
-    let sum=0;
-   
+function salaryCalculator() {
+    let sum = 0;
+
     console.log('In salaryCalculator');
 
-    for (newEmployee of employees){
-        
-    sum += Number(newEmployee.annualSalary)/12;
+    for (newEmployee of employees) {
+
+        sum += Number(newEmployee.annualSalary) / 12;
         console.log(sum);
         $('#monthlySalary').text(`Total Monthly Salary: $${sum}`);
     }
-    if (sum>=20000){
+    if (sum >= 20000) {
         $('#monthlySalary').css("background-color", "red");
     }
-    
+
 }
+
+// delete entire row when clicked
 
 function handleDeleteClick() {
     console.log('delete button has been clicked');
